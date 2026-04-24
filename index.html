@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/md5.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/main.js" charset="utf-8"></script>
+</head>
+
+<body style="background: white;">
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Tab1')" id="defaultOpen">file2base64</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab2')">strlen</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab3')">txt2md5</button>
+    </div>
+
+    <div id="Tab1" class="tabcontent">
+        <h1>计算文件 Base64 编码</h1>
+        <input type="file" id="fileInput">
+    </div>
+    <div id="Tab2" class="tabcontent">
+        <h1>计算字符串长度</h1>
+        <textarea rows="14"></textarea>
+        字符串长度 : <text id="len">0</text><br>
+        英文单词数 : <text id="words">0</text>
+    </div>
+    <div id="Tab3" class="tabcontent">
+        <h1>计算字符串 MD5 值</h1>
+        <table border="0">
+            <tr>
+                <td><input id="plain" type="text"></td>
+                <td><button id="gen">生成</button></td>
+            </tr>
+            <tr>
+                <td><input id="md5" type="text"></td>
+                <td><button id="cp">复制</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

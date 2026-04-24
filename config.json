@@ -1,8 +1,0 @@
-{
-    "description": "ONMP: Opkg + Nginx + MySQL + PHP",
-    "home_url": "Module_onmp.asp",
-    "md5": "c8f507fbfc8890508bc2f1e556d18c3e",
-    "module": "onmp",
-    "title": "ONMP",
-    "version": "0.1"
-}
