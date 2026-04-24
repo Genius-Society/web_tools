@@ -3,7 +3,7 @@ name: auto-sync
 on:
   push:
     branches:
-      - main
+      - en
   workflow_dispatch:
     # 允许手动触发
 
@@ -20,16 +20,15 @@ jobs:
         uses: actions/checkout@v4
 
       # Step 2: 下载文件并存储到仓库目录
-      - name: Sync Files to ModelScope
+      - name: Sync Files to HuggingFace
         env:
-          TOKEN: ${{ secrets.MS_TOKEN }}
+          TOKEN: ${{ secrets.HF_TOKEN }}
           NAME: ${{ secrets.GIT_NAME }}
           EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
-          git clone https://oauth2:$TOKEN@www.modelscope.cn/studios/Genius-Society/web_tools.git ../ms_repo
-          mv -f ./.github/restart.py ../
-          rm -rf ./*.py ./*.txt ./LICENSE ./README.md ./.github ./.git ./.gitignore ./.gitattributes
-          cp -rf ../ms_repo/.git ./
+          git clone https://oauth2:$TOKEN@huggingface.co/spaces/Genius-Society/web_tools ../hf_repo
+          rm -rf ./*.py ./*.txt ./LICENSE ./.github ./.git ./.gitignore ./.gitattributes
+          cp -rf ../hf_repo/.git ../hf_repo/README.md ./
           if [ -n "$(git status --porcelain)" ]; then
             echo "Files are different, committing changes..."
             git config --global user.name "$NAME"
@@ -37,8 +36,6 @@ jobs:
             git add .
             git commit -m "Auto sync at $(date +%Y-%m-%d)"
             git push
-            pip install modelscope
-            python ../restart.py --token $TOKEN
           else
             echo "Files are the same, no changes."
           fi

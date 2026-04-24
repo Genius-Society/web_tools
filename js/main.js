@@ -1,12 +1,12 @@
 function clipbd(res) {
     navigator.clipboard.writeText(res)
         .then(() => {
-            console.log('文件类型: ' + res.substr(5, res.indexOf(';') - 5));
-            alert('内容已成功复制到剪贴板！');
+            console.log('File type: ' + res.substr(5, res.indexOf(';') - 5));
+            alert('The content has successfully been copied onto clipboard!');
         })
         .catch(err => {
-            console.error('无法复制文本: ', err);
-            alert('复制失败: [' + err + ']');
+            console.error('Could not copy text: ', err);
+            alert('Copy failed: [' + err + ']');
         });
 }
 
@@ -30,8 +30,8 @@ function toBase64() {
         if (this.files.length <= 0) return;
 
         if (this.files[0].size > 5242880) {
-            console.log('文件大小大于 5M');
-            alert('您选择的文件太大了！');
+            console.log('File size larger than 5M');
+            alert('Your chosen file is too large!');
             return;
         }
 

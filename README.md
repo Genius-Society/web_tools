@@ -1,3 +1,3 @@
-# 在线编程辅助工具
+# Web Tools
 
-在线辅助编程工具，包含：计算文件 base64 编码 (点击按钮上传文件，会自动将计算结果复制到剪切板上，文件不宜过大)、计算字符串长度 (输入或粘贴字符串进文本框可实时查看其长度)、字符串转 md5 加密值 (输入要加密的字符串，点击生成便可得到其加密字符串)。
+This online programming tool includes: calculating the base64 encoding of a file (click the button to upload a file, and the calculation result will be automatically copied to the clipboard; files should not be too large), calculating the length of a string (enter or paste a string into the text box to view its length in real time), and converting a string to an MD5 encrypted value (enter the string to be encrypted, click generate to get its encrypted string).
